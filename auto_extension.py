@@ -5,7 +5,9 @@ import wine
 
 secret_keys = wine.keys("./secret.json")
 
-driver = webdriver.Firefox()
-wine.access_listpage(secret_keys, driver)
-wine.send_extension(driver)
-driver.close()
+while True:
+    driver = webdriver.Firefox()
+    wine.access_listpage(secret_keys, driver)
+    wine.send_extension(driver)
+    driver.close()
+    time.sleep(250000)
