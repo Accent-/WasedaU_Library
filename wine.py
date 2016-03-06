@@ -12,7 +12,7 @@ def keys(filename):
 
 def access_listpage(secret_keys, driver):
     driver.get("https://wine.wul.waseda.ac.jp/patroninfo*jpn")
-    time.sleep(2)
+    time.sleep(5)
 
     elem = driver.find_element_by_name("extpatid")
     elem.send_keys(secret_keys["user"])
@@ -22,11 +22,11 @@ def access_listpage(secret_keys, driver):
     
     submit = driver.find_element_by_link_text("送信")
     submit.click()
-    time.sleep(2)
+    time.sleep(5)
 
     list_all = driver.find_element_by_partial_link_text("貸出中です")
     list_all.click()
-    time.sleep(2)
+    time.sleep(5)
 
 
 def send_extension(driver):
@@ -35,7 +35,7 @@ def send_extension(driver):
     """
     
     driver.find_element_by_name("requestRenewAll").click()
-    time.sleep(2)
+    time.sleep(5)
     
     driver.find_element_by_name("renewall").click()
-    time.sleep(2)
+    time.sleep(5)
