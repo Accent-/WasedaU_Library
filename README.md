@@ -9,4 +9,9 @@
 # 説明
 - `auto_extension.py`：書籍の延長を自動で行う
 - `wine.py`：ツール群
+- `add_book_title_to_wunderlist.py`：借りている書籍からタイトルと返却日を取得し、wunderlistに登録
+- `wunderpy.py`：wunderlistの投稿や削除を行えるようにモジュール化したもの
+ 
+# 注意
+wunderlistに投稿するためには、自分の使っているlistのIDを予め知らなければならない。よって、`wunderpy.py`の`show_list_id()`でまずはリストのIDを調べてください。
 
