@@ -2,6 +2,18 @@ import json
 from requests_oauthlib import OAuth2Session
 
 
+def show_list_id(wunderlist):
+    url = "https://a.wunderlist.com/api/v1/user"
+    params={}
+    req = wunderlist.get(url, params=params)
+
+    if req.status_code == 200:
+        list_id = json.loads(req.text)
+        print(list_id["name"])
+    else:
+        print("Error: {}".format(req.status_code))
+
+
 def connect_wunderlist(filename):
     with open(filename) as f:
         secret_keys = json.load(f)
